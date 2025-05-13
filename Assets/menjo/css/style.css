@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&family=Roboto:wght@900&display=swap');
+<<<<<<< HEAD
 /* Frame styles */
+=======
+
+  /* Frame styles */
+>>>>>>> c50e3f5 (New Updates)
   body::before {
     content: "";
     position: fixed;
@@ -48,7 +53,11 @@
     html, body {
       height: 100%;
       font-family: 'Nunito', sans-serif;
+<<<<<<< HEAD
 }
+=======
+    }
+>>>>>>> c50e3f5 (New Updates)
     body {
       transition: background-color 0.3s, color 0.3s;
       min-height: 100vh;
