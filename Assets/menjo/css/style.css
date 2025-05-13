@@ -1,10 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600&family=Roboto:wght@900&display=swap');
-<<<<<<< HEAD
-/* Frame styles */
-=======
+:root{
 
-  /* Frame styles */
->>>>>>> c50e3f5 (New Updates)
+    /*Background Colors*/
+    --background-dark-100: #ffffff;
+    --background-dark-90: #d8d8d8;
+    --background-dark-95: #d2d2d2;
+    --background-dark-80:#c3c3c3;
+    --background-dark-70: #c7c7c7;
+    --background-dark-60: #aaaaaa;
+    --background-orange: #ff714a;
+
+    /*Text colors*/
+    --color-white-100: #000000;
+    --color-white-95: #0a0a0a;
+    --color-white-80: #303030;
+    --color-white-70: #444444;
+    --color-white-60: #555555;
+    /*Font Size*/
+    --font-size-48: 48px;
+    --font-size-30: 30px;
+    --font-size-24: 24px;
+    --font-size-21: 21px;
+    --font-size-18: 18px;
+    --font-size-16: 16px;
+    --font-size-14: 14px;
+    --font-size-13: 13px;
+    --font-size-12: 12px;
+    --font-size-11: 11px;
+
+    --transition-default: 0.25s ease;
+}
+
+
   body::before {
     content: "";
     position: fixed;
@@ -53,11 +80,9 @@
     html, body {
       height: 100%;
       font-family: 'Nunito', sans-serif;
-<<<<<<< HEAD
-}
-=======
+
     }
->>>>>>> c50e3f5 (New Updates)
+
     body {
       transition: background-color 0.3s, color 0.3s;
       min-height: 100vh;
@@ -225,7 +250,19 @@
     section:last-child {
       border-bottom: none;
     }
-    
+
+.section-heading{
+    font-size: var(--font-size-30);
+    border-bottom: 2px solid var(--background-dark-60);
+    padding-bottom: 5px;
+}
+
+.section-sub-heading{
+    font-size: var(--font-size-14);
+    text-align: right;
+    font-weight: 300;
+
+
     /* Links */
     a {
       color: var(--primary-color);
