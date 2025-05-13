@@ -170,8 +170,8 @@
     }
     
     #sidebarMenu {
-      background-color: var(--sidebar-bg);
-      border-right: 1px solid var(--sidebar-border);
+      background-color: var(--background-color);
+      
     }
     
     #sidebarMenu .nav-link {
@@ -270,7 +270,7 @@
         }
 
         p {
-            color: var(--color-white-80);
+            
             font-size: var(--font-size-14);
             margin-bottom: 1rem;
         }
