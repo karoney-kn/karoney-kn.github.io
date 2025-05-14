@@ -33,9 +33,65 @@
 
             --sidebar-width: 220px;
             --primary-color: #4361ee;
-            --light-bg: #f8f9fa;
-            --dark-text: #212529;
+            
+            
         }
+    
+    /* Light Theme */
+    body.light-theme {
+      --primary-color: #4361ee;
+      --secondary-color: #3f37c9;
+      --background-color: #d8d8d8;
+      --sidebar-bg: #f8f9fa;
+      --sidebar-border: #dee2e6;
+      --text-color: #212529;
+      --card-bg: #ffffff;
+      --card-border: #dee2e6;
+      --section-border: #dee2e6;
+      --form-bg: #ffffff;
+      --form-border: #ced4da;
+      --nav-link-color: #333;
+      --nav-link-hover: #4361ee;
+    }
+    
+    /* Dark Theme */
+    body.dark-theme {
+      --frame-color: rgba(60, 60, 60, 0.5);
+      --inner-border-color: rgba(0, 0, 0, 0.8);
+      --primary-color: #4895ef;
+      --secondary-color: #4361ee;
+      --background-color: rgba(0,0,0,0.9);
+      --sidebar-bg: #1e1e1e;
+      --sidebar-border: #2d2d2d;
+      --text-color: #e9ecef;
+      --card-bg: #1e1e1e;
+      --card-border: #2d2d2d;
+      --section-border: #2d2d2d;
+      --form-bg: #1e1e1e;
+      --form-border: #3d3d3d;
+      --nav-link-color: #e9ecef;
+      --nav-link-hover: #4895ef;
+    }
+
+        .frame-lining {
+            position: fixed;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            pointer-events: none;
+            mix-blend-mode: difference;
+            z-index: 10003;
+        }
+
+
+    /* Apply theme variables */
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+
+    }
 
     body::before {
       content: "";
@@ -69,23 +125,17 @@
       padding: 28px;
     }
 
-    /* Theme-specific frame colors */
-    body.dark-theme {
-      --frame-color: rgba(60, 60, 60, 0.5);
-      --inner-border-color: rgba(0, 0, 0, 0.2);
-    }
 
     html, body {
       height: 100%;
       font-family: 'Nunito', sans-serif;
-    }
-
+}
     body {
       transition: background-color 0.3s, color 0.3s;
       min-height: 100vh;
       margin: 0;
       padding: 0;
-      position: relative;
+     
     }
 
           /* Sidebar Styles */
@@ -95,18 +145,19 @@
             position: fixed;
             top: 28px;
             left: 28px;
-            background: var(--light-bg);
-            color: var(--dark-text);
+            color: var(--text-color);
             z-index: 10001;
             overflow-y: auto;
             transition: all 0.3s ease;
+
+
         }
         
         .sidebar-header {
             padding: 30px 20px 20px;
             text-align: center;
-            background: linear-gradient(135deg, var(--primary-color), #3f37c9);
-            color: white;
+            
+            color: var(--text-color);
         }
         
         .profile-img {
@@ -140,7 +191,7 @@
             padding: 12px 15px;
             margin-bottom: 5px;
             border-radius: 5px;
-            color: var(--dark-text);
+            color: var(--text-color);
             transition: all 0.2s ease;
             font-weight: 500;
         }
@@ -218,61 +269,11 @@
         margin-left: 0;
       }
     }
-    
-    /* Light Theme */
-    body.light-theme {
-      --primary-color: #4361ee;
-      --secondary-color: #3f37c9;
-      --background-color: #ffffff;
-      --sidebar-bg: #f8f9fa;
-      --sidebar-border: #dee2e6;
-      --text-color: #212529;
-      --card-bg: #ffffff;
-      --card-border: #dee2e6;
-      --section-border: #dee2e6;
-      --form-bg: #ffffff;
-      --form-border: #ced4da;
-      --nav-link-color: #333;
-      --nav-link-hover: #4361ee;
-    }
-    
-    /* Dark Theme */
-    body.dark-theme {
-      --primary-color: #4895ef;
-      --secondary-color: #4361ee;
-      --background-color: #121212;
-      --sidebar-bg: #1e1e1e;
-      --sidebar-border: #2d2d2d;
-      --text-color: #e9ecef;
-      --card-bg: #1e1e1e;
-      --card-border: #2d2d2d;
-      --section-border: #2d2d2d;
-      --form-bg: #1e1e1e;
-      --form-border: #3d3d3d;
-      --nav-link-color: #e9ecef;
-      --nav-link-hover: #4895ef;
-    }
-    
-    /* Apply theme variables */
-    body {
-      background-color: var(--background-color);
-      color: var(--text-color);
-    }
 
-    .card {
+
+    #portfolio .card {
       background-color: var(--card-bg);
       border-color: var(--card-border);
-      color: var(--text-color);
-    }
-    
-    .form-control, .form-select {
-      background-color: var(--form-bg);
-      border-color: var(--form-border);
-      color: var(--text-color);
-    }
-    
-    .form-control:focus, .form-select:focus {
-      background-color: var(--form-bg);
       color: var(--text-color);
     }
     
@@ -447,7 +448,6 @@
     #contact-me {
       float:left;
       width:100%;
-      background: #fff;
       padding:30px 0;
     }
     
@@ -459,21 +459,13 @@
       float: left;
       overflow: hidden;
       width: 100%;
-      color: #000000;
+      color: var(--text-color);
       text-align: center;
       height:368px;
       border:none;
     }
     
-    .profile-card-1 .background {
-      width:100%;
-      vertical-align: top;
-      opacity: 0.9;
-      -webkit-filter: blur(5px);
-      filter: blur(5px);
-      -webkit-transform: scale(1.8);
-      transform: scale(2.8);
-    }
+
     
     .profile-card-1 .card-content {
       width: 100%;
@@ -484,11 +476,13 @@
     }
     
     .profile-card-1 .profile {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
       border-radius: 50%;
       position: absolute;
       bottom: 50%;
       left: 50%;
-      max-width: 100px;
       opacity: 1;
       box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
       border: 2px solid rgba(255, 255, 255, 1);
@@ -522,7 +516,7 @@
   text-align: center;
   border-radius: 50%;
   color: white;
-  background-color: #333;
+  
   transition: all 0.3s ease;
 }
 
