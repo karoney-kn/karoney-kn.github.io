@@ -6,6 +6,8 @@
   <title>K.N|Home</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" type="text/css" href="Assets/menjo/css/style.css">
   <link rel="icon" href="Assets/menjo/images/favicon.ico">
     <!-- Google Fonts -->
@@ -24,14 +26,14 @@
       <div class="user">
         <img src="Assets/menjo/images/profile-mini.png" alt="profile_picture">
         <h3 class="name">Karoney K. Noah</h3>
-        <p class="post">Fullstack Software Developer</p>
+        <p class="post">Fullstack Developer</p>
       </div>
 
       <span class="fs-4 fw-bold mb-4">My Portfolio</span>
       <nav class="nav flex-column w-100">
-        <a class="nav-link active" href="#home">Home</a>
-        <a class="nav-link" href="#portfolio">Portfolio Projects</a>
-        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link active" href="#home">About Me</a>
+        <a class="nav-link" href="#portfolio">Portfolio</a>
+        <a class="nav-link" href="#resume">Resume</a>
         <a class="nav-link" href="#blog">Blog</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
@@ -47,9 +49,9 @@
       </button>
       <div class="collapse navbar-collapse" id="mobileNavbar">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#home">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
           <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
@@ -57,12 +59,6 @@
     </div>
   </nav>
 
-  <!-- Theme toggle buttons
-  <div id="theme-toggle" class="btn-group" role="group">
-    <div id="light-btn" type="button" class=" btn-outline-primary them-tog-btn" aria-pressed="true">Light</div>
-    <div id="dark-btn" type="button" class=" btn-outline-secondary them-tog-btn" aria-pressed="false">Dark</div>
-  </div>
- -->
   <div class="theme-toggle">
       <div id="light-btn" class="theme-btn">Light</div>
       <div id="dark-btn" class="theme-btn">Dark</div>
@@ -71,9 +67,14 @@
   <!-- Main Content -->
   <main id="main-content">
     <section id="home">
-        <h3>HI THERE !</h3>
-        <h1>I'm <span>Karoney K. Noah</span></h1>        <p>A Full Stack Developer Passionate about crafting clean robust, functional and scalable web and android applications.I am skilled in both front-end and back-end technologies, with interest in Dev-Ops,Security,System and Network Administration.</p>
-    <div class="services-section">
+      <h1 class="section-heading">About Me</h1>
+      <h4 class="section-sub-heading">In the Know</h4>
+
+      <h3>HI THERE !</h3>
+      <h1>I'm <span>Karoney K. Noah</span></h1>
+      <p>A Full Stack Developer Passionate about crafting clean robust, functional and scalable web and android applications.I am skilled in both front-end and back-end technologies, with interest in Dev-Ops,Security,System and Network Administration.</p>
+      
+      <div class="services-section">
         <h2>What I Do</h2>
         
         <div class="services-grid">
@@ -121,7 +122,7 @@
                 </div>
             </div>
         </div>
-    </div>    
+      </div>    
     </section>
 
     <section id="portfolio">
@@ -182,64 +183,30 @@
             </div>
           </div>
         </div>
-
-        <div class="col">
-          <div class="card h-100">
-            <img src="Assets/menjo/images/to-do_app2.png" class="card-img-top" alt="Project 3">
-            <div class="card-body">
-              <h5 class="card-title">[6]</h5>
-              <p class="card-text">To Do App.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="Assets/menjo/images/random_app_image.png" class="card-img-top" alt="Project 1">
-            <div class="card-body">
-              <h5 class="card-title">[7]</h5>
-              <p class="card-text">Random Name Generator.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
-
-    <section id="experience">
-      <h2>Experience</h2>
-      <ul>
-        <li><strong>Frontend Developer</strong> - Company A (2022 - Present)</li>
-        <li><strong>Web Designer</strong> - Company B (2020 - 2022)</li>
-        <li><strong>Intern</strong> - Company C (2019 - 2020)</li>
-      </ul>
-    </section>
-
-    <section id="blog">
-      <h2>Blog</h2>
-      <ul>
-        <li><a href="#">How to Build a Responsive Portfolio</a></li>
-        <li><a href="#">Tips for Mastering JavaScript</a></li>
-        <li><a href="#">Bootstrap 5 Essentials</a></li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <form>
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" required>
+    
+    <section id="contact-me">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6"></div>   
+          <div class="col-md-6">
+            <div class="card profile-card-1">
+              <img src="Assets/menjo/images/profile-mini.png" alt="profile-image" class="profile"/>
+              <div class="card-content">
+                <h2>Karoney K. Noah</h2>
+                <h3><small>Fullstack Developer</small></h3>
+                <div class="icon-block">
+                  <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://x.com/yourhandle" target="_blank" class="social-icon twitter"><i class="fab fa-x-twitter"></i></a>
+                  <a href="https://github.com/yourusername" target="_blank" class="social-icon github"><i class="fab fa-github"></i></a>
+                  <a href="https://dev.to/yourusername" target="_blank" class="social-icon devto"><i class="fab fa-dev"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" required>
-        </div>
-        <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" rows="4" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Send</button>
-      </form>
+      </div>
     </section>
   </main>
 
