@@ -233,9 +233,9 @@
         /* Mobile Toggle Button */
         #sidebarCollapse {
             position: fixed;
-            left: 10px;
-            top: 10px;
-            z-index: 1100;
+            left: 5px;
+            top: 5px;
+            z-index: 10004;
             display: none;
         }
         
@@ -480,7 +480,9 @@
       height: 95vh;
     }
     
-
+    .contact-me-item{
+    margin-top: 25%;
+    }
     /*Profile Card*/
     .contact-me-card {
       font-family: 'Open Sans', Arial, sans-serif;
