@@ -19,12 +19,55 @@
 <body class="light-theme">
 
   <div class="frame-lining"></div>
-  <!-- Sidebar for large screens -->
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="overlay"></div>
+    
+    <!-- Sidebar Toggle Button (Mobile) -->
+    <button id="sidebarCollapse" class="btn btn-primary">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <img src="Assets/menjo/images/profile-mini.png" alt="Profile Picture" class="profile-img">
+            <h3 class="profile-name">Karoney K. Noah</h3>
+            <p class="profile-title">Full Stack Developer</p>
+        </div>
+        
+        <div class="sidebar-nav">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#about-me">
+                        <i class="fas fa-user"></i> About Me
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">
+                        <i class="fas fa-briefcase"></i> Portfolio
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-history"></i> Experience
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact-me">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+  <!-- Sidebar for large screens
   <nav id="sidebarMenu" class="d-none d-lg-block">
     <div class="d-flex flex-column align-items-start p-3">
 
       <div class="user">
-        <img src="Assets/menjo/images/profile-mini.png" alt="profile_picture">
+        <img src="" alt="profile_picture">
         <h3 class="name">Karoney K. Noah</h3>
         <p class="post">Fullstack Developer</p>
       </div>
@@ -39,8 +82,8 @@
       </nav>
     </div>
   </nav>
-
-  <!-- Mobile Navbar -->
+ -->
+  <!-- Mobile Navbar
   <nav id="mobileNav" class="navbar navbar-expand-lg fixed-top d-lg-none">
     <div class="container-fluid">
       <a class="navbar-brand fw-bold" href="#">My Portfolio</a>
@@ -58,7 +101,7 @@
       </div>
     </div>
   </nav>
-
+ -->
   <div class="theme-toggle">
       <div id="light-btn" class="theme-btn">Light</div>
       <div id="dark-btn" class="theme-btn">Dark</div>
@@ -66,7 +109,7 @@
   
   <!-- Main Content -->
   <main id="main-content">
-    <section id="home">
+    <section id="about-me">
       <h1 class="section-heading">About Me</h1>
       <h4 class="section-sub-heading">In the Know</h4>
 

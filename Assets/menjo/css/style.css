@@ -30,7 +30,12 @@
       --transition-default: 0.25s ease;
       --frame-color: rgba(200, 200, 200, 0.5);
       --inner-border-color: rgba(200, 200, 200, 0.2);
-    }
+
+            --sidebar-width: 220px;
+            --primary-color: #4361ee;
+            --light-bg: #f8f9fa;
+            --dark-text: #212529;
+        }
 
     body::before {
       content: "";
@@ -83,31 +88,121 @@
       position: relative;
     }
 
-    /* Sidebar styles */
-    #sidebarMenu {
-      min-width: 220px;
-      max-width: 220px;
-      height: 91.7vh;
-      position: fixed;
-      top: 28px;
-      left: 28px;
-      z-index: 1030;
-      transition: background-color 0.3s, border-color 0.3s;
-    }
-    
-    #sidebarMenu .nav-link {
-      font-weight: 500;
-      margin: 0.25rem 0;
-      border-radius: 0.25rem;
-      transition: background-color 0.2s, color 0.2s;
-    }
-    
-    #sidebarMenu .nav-link.active,
-    #sidebarMenu .nav-link:hover {
-      background: var(--primary-color);
-      color: #fff;
-    }
-    
+          /* Sidebar Styles */
+        #sidebar {
+            width: var(--sidebar-width);
+            height: 90.7vh;
+            position: fixed;
+            top: 28px;
+            left: 28px;
+            background: var(--light-bg);
+            color: var(--dark-text);
+            z-index: 10001;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-header {
+            padding: 30px 20px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), #3f37c9);
+            color: white;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin-bottom: 15px;
+        }
+        
+        .profile-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .profile-title {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-nav {
+            padding: 20px;
+        }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            color: var(--dark-text);
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: var(--primary-color);
+            color: white !important;
+        }
+        
+        .nav-link i {
+            margin-right: 10px;
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Mobile Toggle Button */
+        #sidebarCollapse {
+            position: fixed;
+            left: 10px;
+            top: 10px;
+            z-index: 1100;
+            display: none;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            body {
+                padding-left: 0;
+            }
+            
+            #sidebar {
+                transform: translateX(-113%);
+            }
+            
+            #sidebar.active {
+                transform: translateX(0);
+            }
+            
+            #sidebarCollapse {
+                display: block;
+            }
+            
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+            
+            .overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
     #main-content {
       margin-left: 248px;
       padding: 2rem 3rem;
@@ -163,19 +258,7 @@
       background-color: var(--background-color);
       color: var(--text-color);
     }
-    
-    #sidebarMenu {
-      background-color: var(--background-color);
-    }
-    
-    #sidebarMenu .nav-link {
-      color: var(--nav-link-color);
-    }
-    
-    #sidebarMenu .nav-link:hover {
-      color: #fff;
-    }
-    
+
     .card {
       background-color: var(--card-bg);
       border-color: var(--card-border);
@@ -220,19 +303,6 @@
       content: "□";
     }
 
-    /* Mobile navbar */
-    @media (max-width: 991.98px) {
-      #mobileNav {
-        display: block;
-        background-color: var(--sidebar-bg) !important;
-      }
-    }
-    
-    @media (min-width: 992px) {
-      #mobileNav {
-        display: none;
-      }
-    }
     
     /* Section spacing */
     section {
@@ -374,25 +444,6 @@
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 
-    .navbar-toggler {
-      display: block;
-      position: fixed;
-      left: 0;
-      top: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      padding: 10px 15px;
-      transition: all 0.3s ease;
-      border-radius: 0;
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-      top: 5px;
-    }
-
-    .navbar-toggler:focus {
-      outline: none;
-    }
-
     #contact-me {
       float:left;
       width:100%;
@@ -456,36 +507,7 @@
       font-size: 15px;
       margin-top:10px;
     }
-    /*
-    .profile-card-1 i {
-      display: inline-block;
-      font-size: 16px;
-      color: #000000;
-      text-align: center;
-      border: 1px solid var(--background-orange);
-      width: 30px;
-      height: 30px;
-      line-height: 30px;
-      border-radius: 50%;
-      margin:0 5px;
-    }
-    
-    .profile-card-1 .icon-block {
-      float:left;
-      width:100%;
-      margin-top:15px;
-    }
-    
-    .profile-card-1 .icon-block a {
-      text-decoration:none;
-    }
-    
-    .profile-card-1 i:hover {
-      background-color:#fff;
-      color:#2E3434;
-      text-decoration:none;
-    }
-    */
+
     .icon-block {
   margin-top: 15px;
 }
