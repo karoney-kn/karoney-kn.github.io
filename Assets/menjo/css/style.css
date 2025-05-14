@@ -32,20 +32,20 @@
       --inner-border-color: rgba(200, 200, 200, 0.2);
 
             --sidebar-width: 220px;
-            --primary-color: #4361ee;
+
             
             
         }
     
     /* Light Theme */
     body.light-theme {
-      --primary-color: #4361ee;
+      --primary-color: #3949ab;
       --secondary-color: #3f37c9;
       --background-color: #d8d8d8;
       --sidebar-bg: #f8f9fa;
       --sidebar-border: #dee2e6;
-      --text-color: #212529;
-      --card-bg: #ffffff;
+      --text-color: #333333;
+      --card-bg: rgba(0,0,0,0);
       --card-border: #dee2e6;
       --section-border: #dee2e6;
       --form-bg: #ffffff;
@@ -75,10 +75,10 @@
 
         .frame-lining {
             position: fixed;
-            top: 25px;
-            left: 25px;
-            right: 25px;
-            bottom: 25px;
+            top: 28px;
+            left: 28px;
+            right: 28px;
+            bottom: 28px;
             border: 1px solid rgba(255, 255, 255, 0.6);
             pointer-events: none;
             mix-blend-mode: difference;
@@ -188,18 +188,34 @@
         .nav-link {
             display: flex;
             align-items: center;
-            padding: 12px 15px;
-            margin-bottom: 5px;
+            height: 2.3em;
+            padding: 10px 15px;
+            margin-bottom: 7px;
             border-radius: 5px;
             color: var(--text-color);
             transition: all 0.2s ease;
             font-weight: 500;
         }
         
-        .nav-link:hover, .nav-link.active {
-            background-color: var(--primary-color);
-            color: white !important;
-        }
+.nav li a{
+    width: 100%;
+    text-decoration: none;
+    font-size: var(--font-size-14);
+    transition: var(--transition-default);
+}
+
+
+
+.nav li a:hover{
+    background: var(--background-dark-80);
+    box-shadow: inset -2px 0 0 var(--color-white-95);
+     color: var(--text-color);
+}
+
+.nav li a.active{
+    background: var(--background-dark-80);
+    box-shadow: inset -2px 0 0 var(--background-orange);
+}
         
         .nav-link i {
             margin-right: 10px;
@@ -275,6 +291,8 @@
       background-color: var(--card-bg);
       border-color: var(--card-border);
       color: var(--text-color);
+      box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+     
     }
     
     .theme-toggle {
@@ -449,11 +467,12 @@
       float:left;
       width:100%;
       padding:30px 0;
+      height: 95vh;
     }
     
 
     /*Profile Card*/
-    .profile-card-1 {
+    .contact-me-card {
       font-family: 'Open Sans', Arial, sans-serif;
       position: relative;
       float: left;
@@ -463,11 +482,12 @@
       text-align: center;
       height:368px;
       border:none;
+      background-color: rgba(0, 0, 0, 0);
     }
     
 
     
-    .profile-card-1 .card-content {
+    .contact-me-card .card-content {
       width: 100%;
       padding: 15px 25px;
       position: absolute;
@@ -475,7 +495,7 @@
       top: 50%;
     }
     
-    .profile-card-1 .profile {
+    .contact-me-card .profile {
       width: 120px;
       height: 120px;
       object-fit: cover;
@@ -490,13 +510,13 @@
       transform: translate(-50%, 0%);
     }
     
-    .profile-card-1 h2 {
+    .contact-me-card h2 {
       margin: 0 0 5px;
       font-weight: 600;
       font-size:25px;
     }
     
-    .profile-card-1 h2 small {
+    .contact-me-card h2 small {
       display: block;
       font-size: 15px;
       margin-top:10px;
