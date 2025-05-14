@@ -52,6 +52,7 @@
       --form-border: #ced4da;
       --nav-link-color: #333;
       --nav-link-hover: #4361ee;
+      --nav-background-color:#c3c3c3;
     }
     
     /* Dark Theme */
@@ -71,6 +72,7 @@
       --form-border: #3d3d3d;
       --nav-link-color: #e9ecef;
       --nav-link-hover: #4895ef;
+      --nav-background-color:rgba(0,0,0,0.5);
     }
 
         .frame-lining {
@@ -191,7 +193,8 @@
             height: 2.3em;
             padding: 10px 15px;
             margin-bottom: 7px;
-            border-radius: 5px;
+  
+            border-radius: 0 0 0 1rem;
             color: var(--text-color);
             transition: all 0.2s ease;
             font-weight: 500;
@@ -202,19 +205,22 @@
     text-decoration: none;
     font-size: var(--font-size-14);
     transition: var(--transition-default);
+    transition: background-color 0.3s ease;
 }
 
 
 
 .nav li a:hover{
-    background: var(--background-dark-80);
-    box-shadow: inset -2px 0 0 var(--color-white-95);
-     color: var(--text-color);
+    background: var(--nav-background-color);
+    border-bottom: 2px solid var(--background-orange);
+    border-right: 2px solid var(--background-orange);
+    color: var(--text-color);
 }
 
 .nav li a.active{
-    background: var(--background-dark-80);
-    box-shadow: inset -2px 0 0 var(--background-orange);
+    border-right: 2px solid var(--background-orange);
+    background: var(--nav-background-color);
+
 }
         
         .nav-link i {
@@ -304,18 +310,22 @@
       display: flex;
       gap: 1rem;
       z-index: 10000;
-      mix-blend-mode: difference;
+
     }
     
     .theme-btn {
       display: flex;
       align-items: center;
-      gap: 0.3rem;
+      gap: 1rem;
       cursor: pointer;
+      color: var(--text-color);
+      font-size: var(--font-size-14);
     }
     
     #light-btn::before {
       content: "■";
+      b
+      
     }
     
     #dark-btn::before {
