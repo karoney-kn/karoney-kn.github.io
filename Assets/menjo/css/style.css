@@ -39,6 +39,7 @@
     
     /* Light Theme */
     body.light-theme {
+      --border-color: #;
       --primary-color: #3949ab;
       --secondary-color: #3f37c9;
       --background-color: #d3d3d3;
@@ -58,6 +59,7 @@
     
     /* Dark Theme */
     body.dark-theme {
+      --border-color: ;
       --frame-color: rgba(60, 60, 60, 0.5);
       --inner-border-color: rgba(0, 0, 0, 0.8);
       --primary-color: #4895ef;
@@ -516,7 +518,37 @@
     #contact-me {
       min-height: 91vh;
     }
-    
+
+
+        .double-border {
+            position: relative;
+            padding: 2rem;
+        }
+        
+        .double-border::before,
+        .double-border::after {
+            content: '';
+            position: absolute;
+            border: 1px solid var(--background-dark-60);
+            border-radius: 4px;
+            width: calc(100% - 20px);
+            height: calc(100% - 20px);
+            pointer-events: none;
+        }
+        
+        .double-border::before {
+            top: 0;
+            left: 0;
+        }
+        
+        .double-border::after {
+            top: 10px;
+            left: 10px;
+        }
+        
+
+
+
     .contact-me-item{
     margin-top: 25%;
     }
