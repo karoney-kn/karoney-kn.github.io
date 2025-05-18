@@ -39,7 +39,6 @@
     
     /* Light Theme */
     body.light-theme {
-      --border-color: #;
       --primary-color: #3949ab;
       --secondary-color: #3f37c9;
       --background-color: #d3d3d3;
@@ -55,11 +54,14 @@
       --nav-link-color: #333;
       --nav-link-hover: #4361ee;
       --nav-background-color:#c3c3c3;
+      --theme-tog-bg:#000000;
+      --frame-border:#aaaaaa;
     }
     
     /* Dark Theme */
     body.dark-theme {
-      --border-color: ;
+      --frame-border:#3c3c3c;
+      --theme-tog-bg:#3c3c3c;
       --frame-color: rgba(60, 60, 60, 0.5);
       --inner-border-color: rgba(0, 0, 0, 0.8);
       --primary-color: #4895ef;
@@ -84,9 +86,8 @@
             left: 28px;
             right: 28px;
             bottom: 28px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--frame-border);
             pointer-events: none;
-            mix-blend-mode: difference;
             z-index: 10003;
         }
 
@@ -181,6 +182,87 @@
     .menu-toggler {
       font-size: 1.8rem;
       cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .menu-toggler.active {
+      transform: rotate(90deg);
+    }
+
+    /* Mobile Menu Styling */
+    .mobile-menu {
+      position: fixed;
+      top: 60px;
+      right: 30px;
+      background-color: white;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 1rem;
+      opacity: 0;
+      transform: translateY(-20px);
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 10004;
+    }
+
+    .mobile-menu.active {
+      opacity: 1;
+      transform: translateY(0);
+      visibility: visible;
+    }
+
+    .mobile-menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .mobile-menu li {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.2s;
+    }
+
+    .mobile-menu li:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-menu li:hover {
+      background-color: #f8f9fa;
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+    }
+
+    .mobile-menu li.active {
+      background-color: #e9ecef;
+    }
+
+    .mobile-menu li.active a {
+      color: #0d6efd;
+      font-weight: bold;
+    }
+
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
     }
 
           /* Sidebar Styles */
@@ -200,8 +282,7 @@
         
         .sidebar-header {
             padding: 30px 20px 20px;
-            text-align: center;
-            
+            text-align: center;  
             color: var(--text-color);
         }
         
@@ -236,13 +317,41 @@
             height: 2.3em;
             padding: 10px 15px;
             margin-bottom: 7px;
-  
             border-radius: 0 0 0 1rem;
             color: var(--text-color);
             transition: all 0.2s ease;
             font-weight: 500;
+
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link i {
+      margin-right: 10px;
+      width: 20px;
+      text-align: center;
+    
+            font-size: 1.1rem;
         }
         
+
+    /* Active State for Navigation */
+    .nav-link.active {
+      background-color: var(--nav-background-color);
+      color: var(--background-orange);
+      font-weight: bold;
+      
+    }
+
+    .nav-link.active i {
+      color: var(--background-orange);
+    }
+
+    .nav-link:hover:not(.active) {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+
 .nav li a{
     width: 100%;
     text-decoration: none;
@@ -265,14 +374,7 @@
     background: var(--nav-background-color);
 
 }
-        
-        .nav-link i {
-            margin-right: 10px;
-            font-size: 1.1rem;
-            width: 20px;
-            text-align: center;
-        }
-        
+
         /* Mobile Toggle Button */
         #sidebarCollapse {
             position: fixed;
@@ -340,37 +442,51 @@
       background-color: var(--card-bg);
       border-color: var(--card-border);
       color: var(--text-color);
-      box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
-     
+      box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5); 
     }
-    
-    .theme-toggle {
-      position: fixed;
-      left: 24px;
-      bottom: 28px;
-      transform: rotate(-90deg);
-      transform-origin: left bottom;
-      display: flex;
-      gap: 1rem;
-      z-index: 10000;
+ 
 
-    }
-    
+
     .theme-btn {
       display: flex;
       align-items: center;
-      gap: 1rem;
       cursor: pointer;
       color: var(--text-color);
       font-size: 1em;
+      padding: 0.2rem 1rem;
+      transition: all 0.3s ease;
+      background-color: var(--background-color);
+    }
+
+    .theme-btn.active-theme {
+      background-color: var(--theme-tog-bg);
+      color: white;
+      font-weight: bold;
+    }
+
+    .theme-btn:hover:not(.active-theme) {
+      background-color: var(--background-color);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      left: 28.5px;
+      bottom: 28px;
+      transform: rotate(-90deg);
+      transform-origin: left bottom;
+      border: 1px solid var(--frame-border);
+      display: flex;
+      z-index: 10006;
     }
     
     #light-btn::before {
       content: "□";
+      margin-right: 0.5rem;
     }
     
     #dark-btn::before {
       content: "■";
+      margin-right: 0.5rem;
     }
 
     
@@ -642,9 +758,12 @@
 }
 
 .copyright {
+    padding: 0.2rem 1rem;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--frame-border);
     position: fixed;
-    right: 31px;
-    bottom: 5px;
+    right: 28px;
+    bottom: 4.5px;
     color: var(--text-color);
     font-size: 1em;
     z-index: 10004;
